@@ -14,7 +14,7 @@
 #define PORT 2468
 #define SLAVE_IP "127.0.0.1"
 #define NETMAP_INTERFACE "eth0"
-#define NUM_OF_TIMES 1000  /* num of times to run protocol */
+#define NUM_OF_TIMES 2  /* num of times to run protocol */
 
 #define FIXED_BUFFER 16
 #define HELLO "Hello World!"

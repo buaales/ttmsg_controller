@@ -67,4 +67,5 @@ if __name__ == '__main__':
         ip = socket.gethostbyname(hostname) 
         for k, v in mi.items():
             if ip == v[0]:
-                print(k)
+                print(k, end=' ')
+        print()
