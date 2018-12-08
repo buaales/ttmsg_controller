@@ -286,7 +286,7 @@ struct Frame
     char data[4096];
     int len;
 };
-static const int FRAME_BUFFER_SIZE = 256;
+#define FRAME_BUFFER_SIZE 256
 static struct Frame frame_buffer[FRAME_BUFFER_SIZE];
 
 static void init_frame_buffer()
