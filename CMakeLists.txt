@@ -10,3 +10,8 @@ file(GLOB_RECURSE f ${PROJECT_SOURCE_DIR}/lib/*)
 add_executable(msg_server src/server.c ${f})
 add_executable(msg_app src/app/main.c ${f})
 target_link_libraries(msg_server ptp)
+
+if (UNIX AND NOT APPLE)
+    target_link_libraries(msg_server rt)
+    target_link_libraries(msg_app rt)
+endif()

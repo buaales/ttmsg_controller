@@ -1,6 +1,8 @@
 #ifndef COMMON_IMPORTED
 #define COMMON_IMPORTED
 
+#include<stdint.h>
+
 /* default, printf, etc */
 #include<stdio.h>
 /* gettimeofday() */
