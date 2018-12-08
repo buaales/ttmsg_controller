@@ -60,6 +60,11 @@ if __name__ == '__main__':
                 print("arg %s not valid" % arg)
                 exit(-1)
             tmp[arg] = ma[arg]
+        execute(tmp)
     else:
-        tmp = ma
-    execute(tmp)
+        import socket    
+        hostname = socket.gethostname()    
+        ip = socket.gethostbyname(hostname) 
+        for k, v in mi.items():
+            if ip == v[0]:
+                print(k)
