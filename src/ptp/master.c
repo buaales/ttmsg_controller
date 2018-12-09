@@ -99,22 +99,19 @@ int ptp_master(int port)
         receive_packet(sock, buffer, FIXED_BUFFER, NULL, &addr);
         if (strcmp(buffer, "sync") == 0)
         {
-            printf("SYNC!\n ");
             send_packet(sock, (void *)"ready", 5, NULL, &addr);
             int t[2];
             receive_packet(sock, &t, sizeof(t), NULL, NULL);
             if (t[0] == 1024)
             {
-                printf("NEW ROUND %d! \n", t[1]);
+                sync_clock(t[1], sock, &addr);
             }
-            sync_clock(t[1], sock, &addr);
         }
         else
         {
             printf("Received invalid request...\n");
             send_packet(sock, (void *)HELLO, sizeof(HELLO), NULL, &addr);
         }
-        printf("DONE\n");
     }
     close_socket(sock);
     return 0;

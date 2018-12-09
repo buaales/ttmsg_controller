@@ -111,7 +111,6 @@ int ptp_slave(char* master_addr, int port) {
     
     /* sync time with slave */
     char buffer[FIXED_BUFFER] = {0};
-    set_socket_timeout(sock, 100);
     while (1)
     {
         send_packet(sock, (void *)"sync", 4, NULL, &slave_addr);
