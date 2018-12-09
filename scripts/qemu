@@ -1,0 +1,906 @@
+16189
+Booting image: armv7_a15ve_4_image
+16224
+Kernel command line arguments: 
+16228
+Requested architecture is a15ve.
+16396
+OK: about to run the follow qemu command:
+16417
+qemu-system-arm         -m 1024         -smp 4         -machine vexpress-a15 -nographic -kernel armv7_a15ve_4_image
+244699
+kernel 0: ARMv7-A: Boot driver invoked as: /armv7/sbin/cpu_a15ve loglevel=3 periphbase=0x2c000000 consolePort=0
+245219
+kernel 0: ARMv7-A: This is an ARM Cortex-A15 r2p1
+245407
+kernel 0: ARMv7-A:   Security extensions implemented
+245624
+kernel 0: ARMv7-A:   Virtualisation extensions not implemented.
+245811
+kernel 0: ARMv7-A:   Generic timer implemented.
+246154
+kernel 0: ARMv7-A: First byte of boot driver at 0x80000000
+246372
+kernel 0: ARMv7-A: First byte of CPU driver at 0x80015000
+246617
+kernel 0: ARMv7-A: CPU driver entry point is 0x80015000
+247064
+kernel 0: ARMv7-A: Boot data structure at kernel VA 80008400
+247200
+kernel 0: ARMv7-A: Initialising kernel page tables.
+247448
+kernel 0: ARMv7-A: Initialising kernel paging, using RAM at 80000000-9fffffff
+247930
+kernel 0: ARMv7-A: Switching page tables and jumping - see you in arch_init().
+248128
+kernel 0: ARMv7-A:  MMU is currently disabled.
+248303
+kernel 0: ARMv7-A:  Alignment checking is currently disabled.
+248457
+kernel 0: ARMv7-A:  Caches are currently disabled.
+251274
+kernel 0: ARMv7-A: Barrelfish CPU driver starting on ARMv7
+251592
+kernel 0: ARMv7-A: Core data at 0x80008400
+251698
+kernel 0: ARMv7-A: Global data at 0x80008524
+251792
+kernel 0: ARMv7-A: Boot record at 0x0
+252468
+kernel 0: ARMv7-A: Build ID: 892ae149df09815e1117e2716e35fef6d17ae918
+252633
+kernel 0: ARMv7-A: Multiboot info:
+252735
+kernel 0: ARMv7-A:  info header at 0x82113000
+252847
+kernel 0: ARMv7-A:  mods_addr is P:0x8211308c
+253381
+kernel 0: ARMv7-A:  mods_count is 0x19
+253489
+kernel 0: ARMv7-A:  cmdline is at P:0x821131bc
+253774
+kernel 0: ARMv7-A:  cmdline reads '/armv7/sbin/cpu_a15ve loglevel=3 periphbase=0x2c000000 consolePort=0'
+253866
+kernel 0: ARMv7-A:  mmap_length is 0x2
+253970
+kernel 0: ARMv7-A:  mmap_addr is P:0x8211305c
+254098
+kernel 0: ARMv7-A:  multiboot_flags is 0x76
+254196
+kernel 0: ARMv7-A: Initializing exceptions.
+254441
+kernel 0: ARMv7-A: Mapping vectors at P:80016000 to ffff0000 using L2 table at P:80008000
+254765
+kernel 0: ARMv7-A: KCB at 0x80008528
+254854
+kernel 0: ARMv7-A: Parsing command line
+255604
+kernel 0: ARMv7-A: Debug port initialized.
+255693
+kernel 0: ARMv7-A: Initializing the GIC
+256125
+kernel 0: GIC: 160 interrupt lines detected
+256221
+kernel 0: GIC: gic_init done
+256296
+kernel 0: ARMv7-A: gic_init done
+256398
+kernel 0: ARMv7-A: 4 cores in system
+256478
+kernel 0: ARMv7-A: Enabling timers
+257400
+kernel 0: CortexA15 platform: System counter frequency is 62500000Hz.
+257768
+kernel 0: CortexA15 platform: Timeslice interrupt every 1250000 ticks (0ms).
+257907
+kernel 0: CortexA15 platform: Timer interrupt is 29
+258087
+kernel 0: GIC: gic_enable_interrupt for id=0x1d, offset=0x20000000, index=0x0
+258404
+kernel 0: ARMv7-A: Enabling cycle counter user access
+258482
+kernel 0: ARMv7-A: Enabling VFP
+259255
+kernel 0: ARMv7-A: Setting coreboot spawn handler
+259492
+kernel 0: ARMv7-A: Calling arm_kernel_startup
+259644
+kernel 0: ARMv7-A: arm_kernel_startup entered 
+259748
+kernel 0: ARMv7-A: Doing BSP related bootup 
+260192
+MGMT: 8211343c
+260398
+MGMT: 8211343c, got_base: 80041000
+260615
+kernel 0: ARMv7-A: spawn_bsp_init
+261633
+kernel 0: ARMv7-A: spawn_init_common armv7/sbin/init
+261765
+spawn module: armv7/sbin/init
+273834
+kernel 0: ARMv7-A: init_page_tables done: init_l1=0x822e0000 init_l2=0x822e4000
+274743
+kernel 0: ARMv7-A: Calling paging_context_switch with address = 822e0000
+274975
+kernel 0: ARMv7-A: about to call mem_to_local_phys with lvaddr=822e0000
+275221
+kernel 0: ARMv7-A: Using device region at PA:0x0-0x7fffffff
+275447
+kernel 0: ARMv7-A: spawn_init_common: starting from=224000
+275516
+Dump of dispatcher at address 0x82180000:
+275572
+  disabled0      = 1 (RESUME)
+275623
+  disabled1      = 0 (UPCALL)
+275662
+  disabled2      = 0 (UPCALL)
+275698
+  disabled3      = 0 (UPCALL)
+275738
+  disabled4      = 0 (UPCALL)
+275778
+  disabled5      = 0 (UPCALL)
+275820
+  disabled6      = 0 (UPCALL)
+275859
+  disabled7      = 0 (UPCALL)
+275891
+  haswork       = 0
+275929
+  udisp         = 0x224000
+275962
+  lmp_delivered = 0
+275992
+  lmp_seen      = 0
+276026
+  lpm_hint      = 0x0
+276083
+  dispatcher_run                = 0x0
+276138
+  dispatcher_pagefault          = 0x0
+276193
+  dispatcher_pagefault_disabled = 0x0
+276248
+  dispatcher_trap               = 0x0
+276297
+  systime      = 0x0
+276335
+  wakeup       = 0x0
+276368
+  name         = init
+276398
+  fpu_used     = 0
+276429
+  fpu_trap     = 0
+276462
+  curr_core_id = 0x0
+304608
+kernel 0: ARMv7-A: Trying to enable interrupts
+304668
+kernel 0: ARMv7-A: Done enabling interrupts
+304783
+kernel 0: ARMv7-A: Calling dispatch from arm_kernel_startup, start address is=204000
+316650
+init: invoked as: init 2097152
+325116
+[34minit.[31m0.0[0m: using 0x98000000, 128 MB for init's allocator
+349382
+Spawning memory server (armv7/sbin/mem_serv)...
+388328
+Spawning monitor (armv7/sbin/monitor)...
+451585
+monitor: invoked as: armv7/sbin/monitor 7385088
+477120
+RAM allocator initialised, 331 MB (of 331 MB) available
+487331
+Spawning ramfsd on core 0
+588919
+[34mramfsd.[31m0.0[0m: pre-populating from boot image...
+664396
+[34mramfsd.[31m0.0[0m: unpacking Gzipped CPIO /eclipseclp_ramfs.cpio.gz
+886349
+[34mramfsd.[31m0.0[0m: unpacking Gzipped CPIO /skb_ramfs.cpio.gz
+979163
+[34mramfsd.[31m0.0[0m: /armv7/sbin/examples/xmpl-call-response already exists, skipping it
+989139
+[34mramfsd.[31m0.0[0m: ready
+990135
+Spawning skb on core 0
+6515340
+[34mmonitor.[31m0.0[0m: Storing BSP KCB in octopus
+6515468
+[34mmonitor.[31m0.0[0m: octopus_set_bspkcb: storing cap
+6561662
+[34mmonitor.[31m0.0[0m: octopus_set_bspkcb: setting mapping
+6567129
+Spawning proc_mgmt on core 0
+6996666
+[34mproc_mgmt.[31m0.0[0m: ready
+6999686
+Spawning /armv7/sbin/kaluga on core 0
+7092789
+Spawning /armv7/sbin/spawnd on core 0
+7231006
+Spawning /armv7/sbin/startd on core 0
+7454272
+Kaluga using additional device_db file: plat_VE_A15x4.
+7508963
+spawnd.0 up.
+7710697
+[34mproc_mgmt.[31m0.0[0m: Process manager bound with spawnd.0 on iref 12
+7753869
+ERROR: kaluga.0 in arch_startup() ..//usr/kaluga/armv7.c:132
+7754060
+ERROR: No decoding net loaded.
+7754582
+Failure: (            skb) The SKB returned an error Check error code. [SKB_ERR_EXECUTION]
+7754817
+[34mkaluga.[31m0.0[0m: skb goal:decoding_net(N),load_net(N)
+7754906
+[34mkaluga.[31m0.0[0m: skb errcode:2
+7754993
+[34mkaluga.[31m0.0[0m: skb stdout:
+7755146
+[34mkaluga.[31m0.0[0m: skb stderr:calling an undefined procedure decoding_net(N) in module eclipse
+7755150
+
+7756497
+ERROR: kaluga.0 in arch_startup() ..//usr/kaluga/armv7.c:137
+7756558
+ERROR: No decoding net metadata loaded.
+7756693
+Failure: (            skb) The SKB returned an error Check error code. [SKB_ERR_EXECUTION]
+7756810
+[34mkaluga.[31m0.0[0m: skb goal:decoding_net_meta(M),load_net(M)
+7756884
+[34mkaluga.[31m0.0[0m: skb errcode:2
+7756960
+[34mkaluga.[31m0.0[0m: skb stdout:
+7757121
+[34mkaluga.[31m0.0[0m: skb stderr:calling an undefined procedure decoding_net_meta(M) in module eclipse
+7757126
+
+7758345
+ERROR: kaluga.0 in arch_startup() ..//usr/kaluga/armv7.c:142
+7758403
+ERROR: No irq decoding net loaded.
+7758537
+Failure: (            skb) The SKB returned an error Check error code. [SKB_ERR_EXECUTION]
+7758651
+[34mkaluga.[31m0.0[0m: skb goal:decoding_net_irq(N),load_net(N)
+7758727
+[34mkaluga.[31m0.0[0m: skb errcode:2
+7758796
+[34mkaluga.[31m0.0[0m: skb stdout:
+7758949
+[34mkaluga.[31m0.0[0m: skb stderr:calling an undefined procedure decoding_net_irq(N) in module eclipse
+7758953
+
+7759013
+Decoding net irq successfully loaded!
+7760243
+ERROR: kaluga.0 in arch_startup() ..//usr/kaluga/armv7.c:148
+7760317
+ERROR: No irq decoding net metadata loaded.
+7760457
+Failure: (            skb) The SKB returned an error Check error code. [SKB_ERR_EXECUTION]
+7760580
+[34mkaluga.[31m0.0[0m: skb goal:decoding_net_irq_meta(M),load_net(M)
+7760649
+[34mkaluga.[31m0.0[0m: skb errcode:2
+7760717
+[34mkaluga.[31m0.0[0m: skb stdout:
+7760879
+[34mkaluga.[31m0.0[0m: skb stderr:calling an undefined procedure decoding_net_irq_meta(M) in module eclipse
+7760882
+
+7764336
+[34mkaluga.[31m0.0[0m: CPU driver reports 4 core(s).
+7985579
+[34mspawnd.[31m0.0[0m: spawning /armv7/sbin/corectrl on core 0
+8399647
+Allocated 4096B for core_data at KV:0x87340000
+8399851
+Allocated 61440B for CPU driver BSS at KV:0x87341000
+8400119
+Reusing text segment at KV:0x80015000
+8400316
+Loadable segment at V:00000000
+8400412
+Relocatable segment at V:0002c000
+8400496
+Dynamic segment at V:00029d50
+8400823
+Have 977 relocations of size 8
+8410258
+kernel 1: ARMv7-A: APP core 1 booting.
+8410362
+kernel 1: ARMv7-A: CPU driver entry point is KV:80017020
+8410450
+kernel 1: ARMv7-A: Page tables at P:80000000 and P:80004000.
+8410555
+kernel 1: ARMv7-A: Switching page tables and jumping - see you in arch_init().
+8410648
+kernel 1: ARMv7-A:  MMU is currently disabled.
+8410732
+kernel 1: ARMv7-A:  Alignment checking is currently disabled.
+8410802
+kernel 1: ARMv7-A:  Caches are currently disabled.
+8410950
+kernel 1: ARMv7-A: Barrelfish CPU driver starting on ARMv7
+8411012
+kernel 1: ARMv7-A: Core data at 0x87340000
+8411073
+kernel 1: ARMv7-A: Global data at 0x80008524
+8411133
+kernel 1: ARMv7-A: Boot record at 0x80014b34
+8411180
+kernel 1: ARMv7-A: APP core.
+8411341
+kernel 1: ARMv7-A: Build ID: 892ae149df09815e1117e2716e35fef6d17ae918
+8411398
+kernel 1: ARMv7-A: Multiboot info:
+8411463
+kernel 1: ARMv7-A:  info header at 0x82113000
+8411527
+kernel 1: ARMv7-A:  mods_addr is P:0x8211308c
+8411593
+kernel 1: ARMv7-A:  mods_count is 0x19
+8411658
+kernel 1: ARMv7-A:  cmdline is at P:0x821131bc
+8411799
+kernel 1: ARMv7-A:  cmdline reads '/armv7/sbin/cpu_a15ve loglevel=3 periphbase=0x2c000000 consolePort=0'
+8411854
+kernel 1: ARMv7-A:  mmap_length is 0x2
+8411920
+kernel 1: ARMv7-A:  mmap_addr is P:0x8211305c
+8411982
+kernel 1: ARMv7-A:  multiboot_flags is 0x76
+8412043
+kernel 1: ARMv7-A: Initializing exceptions.
+8412112
+kernel 1: ARMv7-A: KCB at 0x871e0000
+8412171
+kernel 1: ARMv7-A: Parsing command line
+8412245
+kernel 1: ARMv7-A: Debug port initialized.
+8412298
+kernel 1: ARMv7-A: Initializing the GIC
+8412368
+kernel 1: GIC: 160 interrupt lines detected
+8412415
+kernel 1: GIC: gic_init done
+8412461
+kernel 1: ARMv7-A: gic_init done
+8412509
+kernel 1: ARMv7-A: Enabling timers
+8412620
+kernel 1: CortexA15 platform: System counter frequency is 62500000Hz.
+8412730
+kernel 1: CortexA15 platform: Timeslice interrupt every 1250000 ticks (0ms).
+8412826
+kernel 1: CortexA15 platform: Timer interrupt is 29
+8412937
+kernel 1: GIC: gic_enable_interrupt for id=0x1d, offset=0x20000000, index=0x0
+8413021
+kernel 1: ARMv7-A: Enabling cycle counter user access
+8413068
+kernel 1: ARMv7-A: Enabling VFP
+8413145
+kernel 1: ARMv7-A: Setting coreboot spawn handler
+8413208
+kernel 1: ARMv7-A: Calling arm_kernel_startup
+8413270
+kernel 1: ARMv7-A: arm_kernel_startup entered 
+8413342
+kernel 1: ARMv7-A: Doing non-BSP related bootup 
+8413509
+MGMT: 8211343c, got_base: 87341000
+8413644
+kernel 1: ARMv7-A: spawn_init_common armv7/sbin/monitor
+8413689
+spawn module: armv7/sbin/monitor
+8417837
+kernel 1: ARMv7-A: init_page_tables done: init_l1=0x899a0000 init_l2=0x899a4000
+8418380
+kernel 1: ARMv7-A: Calling paging_context_switch with address = 899a0000
+8418491
+kernel 1: ARMv7-A: about to call mem_to_local_phys with lvaddr=899a0000
+8418577
+kernel 1: ARMv7-A: Using device region at PA:0x0-0x7fffffff
+8418697
+kernel 1: ARMv7-A: spawn_init_common: starting from=224000
+8418750
+Dump of dispatcher at address 0x89840000:
+8418793
+  disabled0      = 0 (UPCALL)
+8418832
+  disabled1      = 1 (RESUME)
+8418882
+  disabled2      = 0 (UPCALL)
+8418920
+  disabled3      = 0 (UPCALL)
+8418963
+  disabled4      = 0 (UPCALL)
+8419003
+  disabled5      = 0 (UPCALL)
+8419073
+  disabled6      = 0 (UPCALL)
+8419117
+  disabled7      = 0 (UPCALL)
+8419146
+  haswork       = 0
+8419181
+  udisp         = 0x224000
+8419204
+  lmp_delivered = 0
+8419229
+  lmp_seen      = 0
+8419259
+  lpm_hint      = 0x0
+8419308
+  dispatcher_run                = 0x0
+8419357
+  dispatcher_pagefault          = 0x0
+8419406
+  dispatcher_pagefault_disabled = 0x0
+8419456
+  dispatcher_trap               = 0x0
+8419485
+  systime      = 0x0
+8419515
+  wakeup       = 0x0
+8419559
+  name         = armv7/sbin/monit
+8419590
+  fpu_used     = 111
+8419618
+  fpu_trap     = 0
+8419644
+  curr_core_id = 0x0
+8428591
+kernel 1: ARMv7-A: Trying to enable interrupts
+8428654
+kernel 1: ARMv7-A: Done enabling interrupts
+8428770
+kernel 1: ARMv7-A: Calling dispatch from arm_kernel_startup, start address is=204000
+8433907
+[34mspawnd.[31m0.0[0m: spawning /armv7/sbin/corectrl on core 0
+8437846
+monitor: invoked as: armv7/sbin/monitor 0 chanid=0 archid=0
+8588819
+Spawning spawnd on core 1
+8816995
+[34mspawnd.[31m0.0[0m: spawning /armv7/sbin/corectrl on core 0
+9119353
+spawnd.1 up.
+9187063
+[34mproc_mgmt.[31m0.0[0m: Process manager bound with spawnd.1 on iref 259
+9307061
+Allocated 4096B for core_data at KV:0x8a7b0000
+9307307
+Allocated 61440B for CPU driver BSS at KV:0x8a7b1000
+9307459
+Reusing text segment at KV:0x80015000
+9307669
+Loadable segment at V:00000000
+9307774
+Relocatable segment at V:0002c000
+9307873
+Dynamic segment at V:00029d50
+9308237
+Have 977 relocations of size 8
+9327077
+kernel 2: ARMv7-A: APP core 2 booting.
+9327224
+kernel 2: ARMv7-A: CPU driver entry point is KV:80017020
+9327423
+kernel 2: ARMv7-A: Page tables at P:80000000 and P:80004000.
+9327649
+kernel 2: ARMv7-A: Switching page tables and jumping - see you in arch_init().
+9327761
+kernel 2: ARMv7-A:  MMU is currently disabled.
+9327957
+kernel 2: ARMv7-A:  Alignment checking is currently disabled.
+9328104
+kernel 2: ARMv7-A:  Caches are currently disabled.
+9328339
+kernel 2: ARMv7-A: Barrelfish CPU driver starting on ARMv7
+9328482
+kernel 2: ARMv7-A: Core data at 0x8a7b0000
+9328619
+kernel 2: ARMv7-A: Global data at 0x80008524
+9328761
+kernel 2: ARMv7-A: Boot record at 0x80014b34
+9328847
+kernel 2: ARMv7-A: APP core.
+9329056
+kernel 2: ARMv7-A: Build ID: 892ae149df09815e1117e2716e35fef6d17ae918
+9329154
+kernel 2: ARMv7-A: Multiboot info:
+9329297
+kernel 2: ARMv7-A:  info header at 0x82113000
+9329436
+kernel 2: ARMv7-A:  mods_addr is P:0x8211308c
+9329548
+kernel 2: ARMv7-A:  mods_count is 0x19
+9329685
+kernel 2: ARMv7-A:  cmdline is at P:0x821131bc
+9330013
+kernel 2: ARMv7-A:  cmdline reads '/armv7/sbin/cpu_a15ve loglevel=3 periphbase=0x2c000000 consolePort=0'
+9330121
+kernel 2: ARMv7-A:  mmap_length is 0x2
+9330259
+kernel 2: ARMv7-A:  mmap_addr is P:0x8211305c
+9330401
+kernel 2: ARMv7-A:  multiboot_flags is 0x76
+9330534
+kernel 2: ARMv7-A: Initializing exceptions.
+9330659
+kernel 2: ARMv7-A: KCB at 0x8a7a0000
+9330772
+kernel 2: ARMv7-A: Parsing command line
+9330919
+kernel 2: ARMv7-A: Debug port initialized.
+9331028
+kernel 2: ARMv7-A: Initializing the GIC
+9331179
+kernel 2: GIC: 160 interrupt lines detected
+9331271
+kernel 2: GIC: gic_init done
+9331374
+kernel 2: ARMv7-A: gic_init done
+9331467
+kernel 2: ARMv7-A: Enabling timers
+9331685
+kernel 2: CortexA15 platform: System counter frequency is 62500000Hz.
+9331919
+kernel 2: CortexA15 platform: Timeslice interrupt every 1250000 ticks (0ms).
+9332076
+kernel 2: CortexA15 platform: Timer interrupt is 29
+9332300
+kernel 2: GIC: gic_enable_interrupt for id=0x1d, offset=0x20000000, index=0x0
+9332477
+kernel 2: ARMv7-A: Enabling cycle counter user access
+9332584
+kernel 2: ARMv7-A: Enabling VFP
+9332739
+kernel 2: ARMv7-A: Setting coreboot spawn handler
+9332879
+kernel 2: ARMv7-A: Calling arm_kernel_startup
+9333025
+kernel 2: ARMv7-A: arm_kernel_startup entered 
+9333172
+kernel 2: ARMv7-A: Doing non-BSP related bootup 
+9333275
+MGMT: 8211343c, got_base: 8a7b1000
+9333446
+kernel 2: ARMv7-A: spawn_init_common armv7/sbin/monitor
+9333551
+spawn module: armv7/sbin/monitor
+9337796
+kernel 2: ARMv7-A: init_page_tables done: init_l1=0x8b1a0000 init_l2=0x8b1a4000
+9338487
+kernel 2: ARMv7-A: Calling paging_context_switch with address = 8b1a0000
+9338720
+kernel 2: ARMv7-A: about to call mem_to_local_phys with lvaddr=8b1a0000
+9338923
+kernel 2: ARMv7-A: Using device region at PA:0x0-0x7fffffff
+9339128
+kernel 2: ARMv7-A: spawn_init_common: starting from=224000
+9339237
+Dump of dispatcher at address 0x8b040000:
+9339325
+  disabled0      = 0 (UPCALL)
+9339417
+  disabled1      = 0 (UPCALL)
+9339502
+  disabled2      = 1 (RESUME)
+9339600
+  disabled3      = 0 (UPCALL)
+9339682
+  disabled4      = 0 (UPCALL)
+9339779
+  disabled5      = 0 (UPCALL)
+9339855
+  disabled6      = 0 (UPCALL)
+9339950
+  disabled7      = 0 (UPCALL)
+9340003
+  haswork       = 0
+9340090
+  udisp         = 0x224000
+9340153
+  lmp_delivered = 0
+9340203
+  lmp_seen      = 0
+9340271
+  lpm_hint      = 0x0
+9340385
+  dispatcher_run                = 0x0
+9340500
+  dispatcher_pagefault          = 0x0
+9340609
+  dispatcher_pagefault_disabled = 0x0
+9340730
+  dispatcher_trap               = 0x0
+9340797
+  systime      = 0x0
+9340847
+  wakeup       = 0x0
+9340933
+  name         = armv7/sbin/monit
+9340997
+  fpu_used     = 111
+9341059
+  fpu_trap     = 0
+9341127
+  curr_core_id = 0x0
+9349961
+kernel 2: ARMv7-A: Trying to enable interrupts
+9350090
+kernel 2: ARMv7-A: Done enabling interrupts
+9350337
+kernel 2: ARMv7-A: Calling dispatch from arm_kernel_startup, start address is=204000
+9359572
+monitor: invoked as: armv7/sbin/monitor 0 chanid=0 archid=0
+9805791
+Spawning spawnd on core 2
+9983665
+spawnd.2 up.
+10050284
+[34mproc_mgmt.[31m0.0[0m: Process manager bound with spawnd.2 on iref 515
+10131103
+Allocated 4096B for core_data at KV:0x8adb0000
+10131329
+Allocated 61440B for CPU driver BSS at KV:0x8adb1000
+10131475
+Reusing text segment at KV:0x80015000
+10131687
+Loadable segment at V:00000000
+10131806
+Relocatable segment at V:0002c000
+10131924
+Dynamic segment at V:00029d50
+10132275
+Have 977 relocations of size 8
+10144207
+kernel 3: ARMv7-A: APP core 3 booting.
+10144308
+kernel 3: ARMv7-A: CPU driver entry point is KV:80017020
+10144410
+kernel 3: ARMv7-A: Page tables at P:80000000 and P:80004000.
+10144533
+kernel 3: ARMv7-A: Switching page tables and jumping - see you in arch_init().
+10144621
+kernel 3: ARMv7-A:  MMU is currently disabled.
+10144748
+kernel 3: ARMv7-A:  Alignment checking is currently disabled.
+10144850
+kernel 3: ARMv7-A:  Caches are currently disabled.
+10145027
+kernel 3: ARMv7-A: Barrelfish CPU driver starting on ARMv7
+10145114
+kernel 3: ARMv7-A: Core data at 0x8adb0000
+10145200
+kernel 3: ARMv7-A: Global data at 0x80008524
+10145307
+kernel 3: ARMv7-A: Boot record at 0x80014b34
+10145365
+kernel 3: ARMv7-A: APP core.
+10145543
+kernel 3: ARMv7-A: Build ID: 892ae149df09815e1117e2716e35fef6d17ae918
+10145606
+kernel 3: ARMv7-A: Multiboot info:
+10145704
+kernel 3: ARMv7-A:  info header at 0x82113000
+10145815
+kernel 3: ARMv7-A:  mods_addr is P:0x8211308c
+10145898
+kernel 3: ARMv7-A:  mods_count is 0x19
+10145997
+kernel 3: ARMv7-A:  cmdline is at P:0x821131bc
+10146193
+kernel 3: ARMv7-A:  cmdline reads '/armv7/sbin/cpu_a15ve loglevel=3 periphbase=0x2c000000 consolePort=0'
+10146283
+kernel 3: ARMv7-A:  mmap_length is 0x2
+10146379
+kernel 3: ARMv7-A:  mmap_addr is P:0x8211305c
+10146467
+kernel 3: ARMv7-A:  multiboot_flags is 0x76
+10146568
+kernel 3: ARMv7-A: Initializing exceptions.
+10146642
+kernel 3: ARMv7-A: KCB at 0x8ada0000
+10146716
+kernel 3: ARMv7-A: Parsing command line
+10146803
+kernel 3: ARMv7-A: Debug port initialized.
+10146873
+kernel 3: ARMv7-A: Initializing the GIC
+10146974
+kernel 3: GIC: 160 interrupt lines detected
+10147030
+kernel 3: GIC: gic_init done
+10147096
+kernel 3: ARMv7-A: gic_init done
+10147156
+kernel 3: ARMv7-A: Enabling timers
+10147285
+kernel 3: CortexA15 platform: System counter frequency is 62500000Hz.
+10147433
+kernel 3: CortexA15 platform: Timeslice interrupt every 1250000 ticks (0ms).
+10147530
+kernel 3: CortexA15 platform: Timer interrupt is 29
+10147680
+kernel 3: GIC: gic_enable_interrupt for id=0x1d, offset=0x20000000, index=0x0
+10147805
+kernel 3: ARMv7-A: Enabling cycle counter user access
+10147873
+kernel 3: ARMv7-A: Enabling VFP
+10147968
+kernel 3: ARMv7-A: Setting coreboot spawn handler
+10148044
+kernel 3: ARMv7-A: Calling arm_kernel_startup
+10148131
+kernel 3: ARMv7-A: arm_kernel_startup entered 
+10148218
+kernel 3: ARMv7-A: Doing non-BSP related bootup 
+10148290
+MGMT: 8211343c, got_base: 8adb1000
+10148409
+kernel 3: ARMv7-A: spawn_init_common armv7/sbin/monitor
+10148471
+spawn module: armv7/sbin/monitor
+10152609
+kernel 3: ARMv7-A: init_page_tables done: init_l1=0x8b9a0000 init_l2=0x8b9a4000
+10153186
+kernel 3: ARMv7-A: Calling paging_context_switch with address = 8b9a0000
+10153347
+kernel 3: ARMv7-A: about to call mem_to_local_phys with lvaddr=8b9a0000
+10153467
+kernel 3: ARMv7-A: Using device region at PA:0x0-0x7fffffff
+10153620
+kernel 3: ARMv7-A: spawn_init_common: starting from=224000
+10153693
+Dump of dispatcher at address 0x8b840000:
+10153743
+  disabled0      = 0 (UPCALL)
+10153798
+  disabled1      = 0 (UPCALL)
+10153847
+  disabled2      = 0 (UPCALL)
+10153905
+  disabled3      = 1 (RESUME)
+10153958
+  disabled4      = 0 (UPCALL)
+10154021
+  disabled5      = 0 (UPCALL)
+10154075
+  disabled6      = 0 (UPCALL)
+10154133
+  disabled7      = 0 (UPCALL)
+10154160
+  haswork       = 0
+10154214
+  udisp         = 0x224000
+10154247
+  lmp_delivered = 0
+10154286
+  lmp_seen      = 0
+10154321
+  lpm_hint      = 0x0
+10154378
+  dispatcher_run                = 0x0
+10154478
+  dispatcher_pagefault          = 0x0
+10154556
+  dispatcher_pagefault_disabled = 0x0
+10154618
+  dispatcher_trap               = 0x0
+10154654
+  systime      = 0x0
+10154688
+  wakeup       = 0x0
+10154769
+  name         = armv7/sbin/monit
+10154811
+  fpu_used     = 111
+10154839
+  fpu_trap     = 0
+10154870
+  curr_core_id = 0x0
+10163649
+kernel 3: ARMv7-A: Trying to enable interrupts
+10163730
+kernel 3: ARMv7-A: Done enabling interrupts
+10163916
+kernel 3: ARMv7-A: Calling dispatch from arm_kernel_startup, start address is=204000
+10173165
+monitor: invoked as: armv7/sbin/monitor 0 chanid=0 archid=0
+10665200
+Spawning spawnd on core 3
+10816774
+spawnd.3 up.
+10878838
+[34mproc_mgmt.[31m0.0[0m: Process manager bound with spawnd.3 on iref 771
+10892559
+[34mstartd.[31m0.0[0m: starting app /armv7/sbin/serial_kernel on core 0
+10893419
+[34mkaluga.[31m0.0[0m: Kaluga running on VExpressEMM
+11076350
+[34mspawnd.[31m0.0[0m: spawning /armv7/sbin/serial_kernel on core 0
+11113977
+[34mstartd.[31m0.0[0m: starting app /armv7/sbin/angler on core 0
+11162016
+kernel 0: GIC: gic_enable_interrupt for id=0x25, offset=0x20, index=0x1
+11753085
+[34mspawnd.[31m0.0[0m: spawning /armv7/sbin/angler on core 0
+11796380
+[34mstartd.[31m0.0[0m: starting app /armv7/sbin/examples/xmpl-call-response on core 1
+11832405
+kernel 0: type = 44, bytes = 0
+11832531
+kernel 0: destcn=800, dest_level=1, dest_slot=46
+12068630
+[34mspawnd.[31m0.0[0m: spawning /armv7/sbin/fish on core 0
+12221875
+fish v0.2 -- pleased to meet you!
+12224456
+File /init.fish not found
+12227708
+available commands:
+12237266
+help           print_cspace   quit           nproc          ps             
+12243828
+demo           pixels         mnfs           oncore         reset          
+12250375
+poweroff       skb            mount          ls             cd             
+12517933
+pwd            touch          cat            hd             cat2           
+12644842
+dd             cp             rm             mkdir          rmdir          
+12647768
+setenv         src            printenv       free           dump_caps      
+12648285
+
+12765155
+> [34mspawnd.[31m1.0[0m: spawning /armv7/sbin/examples/xmpl-call-response on core 1
+12798532
+[34mstartd.[31m0.0[0m: starting app /armv7/sbin/examples/xmpl-call-response on core 0
+12964258
+[34mspawnd.[31m0.0[0m: spawning /armv7/sbin/examples/xmpl-call-response on core 0
+12980901
+[34mstartd.[31m0.0[0m: starting app /armv7/sbin/memtest on core 0
+13170689
+Start time is 807994185
+13247632
+[34mspawnd.[31m0.0[0m: spawning /armv7/sbin/memtest on core 0
+13262326
+No bootscript
+13347217
+memtest passed successfully! on core 0
+16117647
+2971892
+17317341
+[34mxmpl-call-respon.[31m1.0[0m: server: re-sending myresponse
+18441676
+2342634
+20728939
+2305612
+23006739
+2296082
+24994277
+[34mxmpl-call-respon.[31m1.0[0m: server: re-sending myresponse
+25316513
+2328291
+27673908
+2376326
+29981528
+2326143
+32270499
+2307340
+34559981
+^C^C^C2307855
