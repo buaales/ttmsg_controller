@@ -57,5 +57,17 @@ static void get_time(int in[2]) {
 #define ALLOC(type, var) type* var = (type*)calloc(1, sizeof(type))
 #define CVT(type, dest, src) type dest = (type)src
 
-static const unsigned long long TIME_SLOT_LEN_MS = 500ULL;
+static uint64_t time_to_uint64(int in[2])
+{
+    uint64_t a = in[0];
+    uint64_t b = in[1];
+    return b + a * 1000000000ULL;
+}
+static void time_from_uint64(int out[2], uint64_t t)
+{
+    out[0] = t / 1000000000ULL;
+    out[1] = t - ((uint64_t)out[0]) * 1000000000ULL;
+}
+
+static const unsigned long long TIME_SLOT_LEN_MS = 1000ULL;
 #endif

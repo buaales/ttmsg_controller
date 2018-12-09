@@ -11,6 +11,7 @@
 #include <errno.h> 
 #include "mdl.h"
 #include "ptp.h"
+#include <pthread.h>
 
 struct Channel* channels[1024];
 int channel_fds[1024];
@@ -39,6 +40,7 @@ struct AppUserDefined
 };
 
 struct MsgServer* my_server_info;
+pthread_t master_ptp_thread;
 
 struct Channel* get_channel(const char* app_name, enum ChannelDirection direction)
 {
@@ -335,11 +337,14 @@ static void run_mdl(void)
     struct RpcHead* head = (struct RpcHead*)malloc(4096);
     int cur_time = 0;
     init_frame_buffer();
+
+    int t[2];
+    uint64_t cur_clock_time;
+    get_time(t);
+    cur_clock_time = time_to_uint64(t);
     while (1)
     {
         printf("TIME_SLOT=%d %s ", cur_time, prop->my_name);
-        int start_time[2], end_time[2];
-        get_time(start_time);
         for (int i = 0; i < prop->time_table_count; i++)
         {
             struct MsgTable* table = &prop->table[i];
@@ -426,39 +431,29 @@ static void run_mdl(void)
 
         cur_time++;
 
-        if (1 && cur_time == prop->peroid)
+        if (0 && cur_time == prop->peroid)
         {
-            if (master_ud == my_ud)
+            int i;
+            for (i = 0; i < topo->count; i++)
             {
-                for (int i = 0; i < topo->count ; i++)
+                if (strcmp(topo->server[i].name, prop->my_name) == 0)
                 {
-                    if (strcmp(topo->server[i].name, prop->my_name) == 0)
-                    {
-                        continue;
-                    }
-                    ptp_master(my_ud->port + 20000 + i);
+                    break;
                 }
             }
-            else
-            {
-                int i;
-                for (i = 0; i < topo->count ; i++)
-                {
-                    if (strcmp(topo->server[i].name, prop->my_name) == 0)
-                    {
-                        break;
-                    }
-                }
-                ptp_slave(master_ud->ip, master_ud->port + 20000 + i);
-            }
+            ptp_slave(master_ud->ip, master_ud->port + 20000 + i);
         }
         printf("\n");
 
         cur_time %= prop->peroid;
-        get_time(end_time);
+
+        cur_clock_time += TIME_SLOT_LEN_MS * 1000000ULL;
+        int t2[2];
+        get_time(t2);
+        uint64_t now = time_to_uint64(t2);
         // 计算刚才的耗时
-        uint64_t diff_nano = (end_time[1] - start_time[1]) + (end_time[0] -  start_time[0]) * 1000000000ULL;
-        usleep((TIME_SLOT_LEN_MS * 1000ULL * 1000ULL - diff_nano) / 1000);
+        uint64_t diff_nano = cur_clock_time - now;
+        usleep(diff_nano / 1000);
         // 到这里过去了整一秒钟
     }
 }
@@ -506,6 +501,18 @@ int main(int argc, char *argv[])
 
     if (master_ud == my_ud)
     {
+        // start ptp service
+        if (master_ud == my_ud)
+        {
+            for (int i = 0; i < topo->count; i++)
+            {
+                if (strcmp(topo->server[i].name, prop->my_name) == 0)
+                {
+                    continue;
+                }
+                pthread_create(&master_ptp_thread, NULL, master_thread, (void*)(my_ud->port + 20000 + i));
+            }
+        }
         handle_msg_server_master();
     }
     else

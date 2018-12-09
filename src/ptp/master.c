@@ -93,19 +93,32 @@ int ptp_master(int port)
 
     struct sockaddr_in addr = {0};
     char buffer[FIXED_BUFFER] = {0};
-    receive_packet(sock, buffer, FIXED_BUFFER, NULL, &addr);
-    if (strcmp(buffer, "sync") == 0)
+    memset(buffer, 0, sizeof(buffer));
+    while (1)
     {
-        send_packet(sock, (void *)"ready", 5, NULL, &addr);
-        int t = 0;
-        receive_packet(sock, &t, sizeof(t), NULL, NULL);
-        sync_clock(t, sock, &addr);
-    }
-    else
-    {
-        printf("Received invalid request...\n");
-        send_packet(sock, (void *)HELLO, sizeof(HELLO), NULL, &addr);
+        receive_packet(sock, buffer, FIXED_BUFFER, NULL, &addr);
+        if (strcmp(buffer, "sync") == 0)
+        {
+            printf("SYNC!\n ");
+            send_packet(sock, (void *)"ready", 5, NULL, &addr);
+            int t;
+            receive_packet(sock, &t, sizeof(t), NULL, NULL);
+            t = NUM_OF_TIMES;
+            printf("NEW ROUND %d! \n", t);
+            sync_clock(t, sock, &addr);
+        }
+        else
+        {
+            printf("Received invalid request...\n");
+            send_packet(sock, (void *)HELLO, sizeof(HELLO), NULL, &addr);
+        }
+        printf("DONE\n");
     }
     close_socket(sock);
     return 0;
+}
+
+void* master_thread(void* arg)
+{
+    ptp_master((int)arg);
 }

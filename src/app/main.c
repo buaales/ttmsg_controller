@@ -106,6 +106,11 @@ static void run_mdl(void)
     struct RpcHead* head = (struct RpcHead*)malloc(4096);
     int cur_time = 0;
     int time_slot = 0;
+
+    int t[2];
+    uint64_t cur_clock_time;
+    get_time(t);
+    cur_clock_time = time_to_uint64(t);
     while (1)
     {
         int start_time[2], end_time[2];
@@ -131,10 +136,13 @@ static void run_mdl(void)
 
         cur_time++;
         time_slot++;
-        get_time(end_time);
         // 计算刚才的耗时
-        uint64_t diff_nano = (end_time[1] - start_time[1]) + (end_time[0] -  start_time[0]) * 1000000000ULL;
-        usleep((TIME_SLOT_LEN_MS * 1000ULL * 1000ULL - diff_nano) / 1000);
+        int t2[2];
+        get_time(t2);
+        uint64_t now = time_to_uint64(t2);
+        cur_clock_time += TIME_SLOT_LEN_MS * 1000000ULL;
+        uint64_t diff_nano = cur_clock_time - now;
+        usleep(diff_nano / 1000);
         // 到这里过去了整一秒钟
         cur_time %= prop->peroid;
         time_slot %= topo->global_period;
