@@ -116,13 +116,13 @@ int ptp_slave(char* master_addr, int port) {
     {
         send_packet(sock, (void *)"sync", 4, NULL, &slave_addr);
         int ret = receive_packet(sock, buffer, FIXED_BUFFER, NULL, &slave_addr);
-        if (ret)
+        if (ret && strncmp(buffer, "ready", 5) == 0)
         {
             break;
         }
     }
-    int num = NUM_OF_TIMES;
-    send_packet(sock, &num, sizeof(num), NULL, &slave_addr);
+    int tb[2] = {1024, NUM_OF_TIMES};
+    send_packet(sock, &tb, sizeof(tb), NULL, &slave_addr);
     sync_clock(sock, &slave_addr);
     close_socket(sock);
     return 0;

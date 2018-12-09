@@ -431,7 +431,7 @@ static void run_mdl(void)
 
         cur_time++;
 
-        if (0 && cur_time == prop->peroid)
+        if (1 && cur_time == prop->peroid && my_ud != master_ud)
         {
             int i;
             for (i = 0; i < topo->count; i++)

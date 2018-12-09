@@ -65,6 +65,7 @@ if __name__ == '__main__':
         import socket    
         hostname = socket.gethostname()    
         ip = socket.gethostbyname(hostname) 
+        print('python3', sys.argv[0], end=' ')
         for k, v in mi.items():
             if ip == v[0]:
                 print(k, end=' ')

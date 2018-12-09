@@ -101,11 +101,13 @@ int ptp_master(int port)
         {
             printf("SYNC!\n ");
             send_packet(sock, (void *)"ready", 5, NULL, &addr);
-            int t;
+            int t[2];
             receive_packet(sock, &t, sizeof(t), NULL, NULL);
-            t = NUM_OF_TIMES;
-            printf("NEW ROUND %d! \n", t);
-            sync_clock(t, sock, &addr);
+            if (t[0] == 1024)
+            {
+                printf("NEW ROUND %d! \n", t[1]);
+            }
+            sync_clock(t[1], sock, &addr);
         }
         else
         {
