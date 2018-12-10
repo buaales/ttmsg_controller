@@ -867,40 +867,10 @@ setenv         src            printenv       free           dump_caps
 12648285
 
 12765155
-> [34mspawnd.[31m1.0[0m: spawning /armv7/sbin/examples/xmpl-call-response on core 1
+> [34mspawnd.[31m1.0[0m: spawning /armv7/sbin/examples/xmpl-msg-server on core 1
 12798532
-[34mstartd.[31m0.0[0m: starting app /armv7/sbin/examples/xmpl-call-response on core 0
+[34mstartd.[31m0.0[0m: starting app /armv7/sbin/examples/xmpl-msg-app on core 2
 12964258
-[34mspawnd.[31m0.0[0m: spawning /armv7/sbin/examples/xmpl-call-response on core 0
+[34mspawnd.[31m0.0[0m: spawning /armv7/sbin/examples/xmpl-msg-app on core 3
 12980901
-[34mstartd.[31m0.0[0m: starting app /armv7/sbin/memtest on core 0
-13170689
-Start time is 807994185
-13247632
-[34mspawnd.[31m0.0[0m: spawning /armv7/sbin/memtest on core 0
-13262326
-No bootscript
-13347217
-memtest passed successfully! on core 0
-16117647
-2971892
-17317341
-[34mxmpl-call-respon.[31m1.0[0m: server: re-sending myresponse
-18441676
-2342634
-20728939
-2305612
-23006739
-2296082
-24994277
-[34mxmpl-call-respon.[31m1.0[0m: server: re-sending myresponse
-25316513
-2328291
-27673908
-2376326
-29981528
-2326143
-32270499
-2307340
-34559981
-^C^C^C2307855
+[34mstartd.[31m0.0[0m: starting app /armv7/sbin/xmpl-msg-app on core 0

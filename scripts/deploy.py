@@ -8,6 +8,9 @@ from collections import defaultdict
 
 MSG_BIN = os.path.join(os.path.dirname(os.path.abspath( __file__ )), "../build/msg_server")
 APP_BIN = os.path.join(os.path.dirname(os.path.abspath( __file__ )), "../build/msg_app")
+QEMU = os.path.join(os.path.dirname(os.path.abspath( __file__ )), "../scripts/a.out")
+QEMU_ = os.path.join(os.path.dirname(os.path.abspath( __file__ )), "../scripts/qemu")
+BUILD_ = os.path.join(os.path.dirname(os.path.abspath( __file__ )), "../scripts/build")
 
 def deploy(ttfile='/tmp/tt.txt'):
     f = open(ttfile, 'r')
@@ -54,12 +57,18 @@ def execute(msg_app_map):
 if __name__ == '__main__':
     ma, mi = deploy()
     tmp = {}
+    enable_qemu = True
     if len(sys.argv) > 1:
         for arg in sys.argv[1:]:
-            if arg not in ma:
+            if arg == '-q':
+                enable_qemu = False
+            elif arg not in ma:
                 print("arg %s not valid" % arg)
                 exit(-1)
             tmp[arg] = ma[arg]
+        if enable_qemu:
+            subprocess.run(f'{QEMU} < {BUILD_}', stdout=sys.stdout,shell=True)
+            subprocess.run(f'{QEMU} < {QEMU_}', stdout=sys.stdout,shell=True)
         execute(tmp)
     else:
         import socket    
