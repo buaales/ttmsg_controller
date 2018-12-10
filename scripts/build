@@ -1,0 +1,306 @@
+55404
+Rm container successfully
+134211
+ac3a667896f76581a8405c553ecd23f9ec6b186f4aaebb5a4ae6d316934010e5
+590320
+Container successfully start
+648257
+ac3a667896f7
+1716394
+arm-linux-gnueabi-gcc -std=c99 -Wstrict-prototypes -Wold-style-definition -Wmissing-prototypes -fno-omit-frame-pointer -fno-builtin -nostdinc -U__linux__ -Ulinux -Wall -Wshadow -Wmissing-declarations -Wmissing-field-initializers -Wtype-limits -Wredundant-decls -Werror -fno-unwind-tables -Wno-packed-bitfield-compat -marm -fno-stack-protector -mcpu=cortex-a9 -march=armv7-a -mapcs -mabi=aapcs-linux -mfloat-abi=hard -mfpu=vfpv3 -msingle-pic-base -mpic-register=r9 -DPIC_REGISTER=R9 -fPIE -D__ARM_CORTEX__ -D__ARM_ARCH_7A__ -Wno-unused-but-set-variable -Wno-suggest-attribute=noreturn -Wno-format -DBARRELFISH -DBF_BINARY_PREFIX=\"\" -DCONFIG_SVM -DUSE_KALUGA_DVM -DCONFIG_INTERCONNECT_DRIVER_LMP -DCONFIG_INTERCONNECT_DRIVER_UMP -DCONFIG_INTERCONNECT_DRIVER_LOCAL -DCONFIG_FLOUNDER_BACKEND_LMP -DCONFIG_FLOUNDER_BACKEND_UMP -DCONFIG_FLOUNDER_BACKEND_LOCAL -g -O2 -I../include -I../include/arch/arm -I../include/target/arm -I./armv7/include -I../usr/examples/xmpl-group/. -I..//usr/examples/xmpl-group/. -I./armv7/usr/examples/xmpl-group/. -o ./armv7/usr/examples/xmpl-group/_for_app_examples/xmpl-group/main.o -c ..//usr/examples/xmpl-group/main.c 
+1767348
+arm-linux-gnueabi-gcc -g -O2 ./armv7/lib/crt0.o ./armv7/lib/crtbegin.o -fno-builtin -nostdlib -Wl,-section-start,.text=0x400000 -Wl,--build-id=none -static -o ./armv7/sbin/examples/xmpl-group.full ./armv7/usr/examples/xmpl-group/_for_app_examples/xmpl-group/main.o ./armv7/usr/examples/xmpl-group/_for_app_examples/xmpl-group/shared_mem.o ./armv7/usr/examples/xmpl-group/_for_app_examples/xmpl-group/group.o ./armv7/usr/examples/xmpl-group/_for_app_examples/xmpl-group/testcase.o ./armv7/usr/examples/xmpl-group/_for_app_examples/xmpl-group/xmpl_group_flounder_bindings.o -Wl,--start-group ./armv7/lib/libbench.a -Wl,--whole-archive -Wl,--no-whole-archive ./armv7/lib/libbench.a ./armv7/lib/libbarrelfish.a ./armv7/lib/libterm_client.a ./armv7/lib/liboctopus_parser.a ./armv7/errors/errno.o ./armv7/lib/libc.a ./armv7/lib/libcompiler-rt.a ./armv7/lib/crtend.o ./armv7/lib/libcollections.a -Wl,--end-group 
+1863514
+arm-linux-gnueabi-objcopy --only-keep-debug ./armv7/sbin/examples/xmpl-group.full ./armv7/sbin/examples/xmpl-group.debug 
+1874838
+arm-linux-gnueabi-objcopy -g --add-gnu-debuglink=./armv7/sbin/examples/xmpl-group.debug ./armv7/sbin/examples/xmpl-group.full ./armv7/sbin/examples/xmpl-group 
+1893739
+./tools/bin/arm_bootimage platforms/arm/menu.lst.armv7_a15ve_1 ./armv7/sbin/boot_ve armv7_a15ve_1_image . 0x80000000 
+1894529
+./tools/bin/arm_bootimage platforms/arm/menu.lst.armv7_a15ve_4 ./armv7/sbin/boot_ve armv7_a15ve_4_image . 0x80000000 
+1895140
+./tools/bin/arm_bootimage platforms/arm/menu.lst.armv7_a15ve_fvp_1 ./armv7/sbin/boot_ve armv7_a15ve_fvp_1_image . 0x80000000 
+1895382
+ARM Static Bootloader
+1895392
+Reading boot configuration from platforms/arm/menu.lst.armv7_a15ve_1
+1895404
+Beginning allocation at PA 80000000 (VA 80000000)
+1895409
+Loading ./armv7/sbin/boot_ve
+1895490
+Boot driver entry point: PA 8000ade0
+1895497
+Loading .//armv7/sbin/cpu_a15ve
+1895526
+./tools/bin/arm_bootimage platforms/arm/menu.lst.armv7_a15ve_fvp_4 ./armv7/sbin/boot_ve armv7_a15ve_fvp_4_image . 0x80000000 
+1895639
+CPU driver entry point: VA 80015000
+1895647
+Allocated 0xf3000B at PA 8004c000 for .//armv7/sbin/cpu_a15ve
+1895755
+ARM Static Bootloader
+1895764
+Reading boot configuration from platforms/arm/menu.lst.armv7_a15ve_4
+1895827
+Beginning allocation at PA 80000000 (VA 80000000)
+1895836
+Loading ./armv7/sbin/boot_ve
+1895911
+Boot driver entry point: PA 8000ade0
+1895917
+Loading .//armv7/sbin/cpu_a15ve
+1896093
+CPU driver entry point: VA 80015000
+1896101
+Allocated 0xf3000B at PA 8004c000 for .//armv7/sbin/cpu_a15ve
+1896131
+Allocated 0x19a000B at PA 8013f000 for .//armv7/sbin/init
+1896282
+ARM Static Bootloader
+1896289
+Reading boot configuration from platforms/arm/menu.lst.armv7_a15ve_fvp_1
+1896338
+Beginning allocation at PA 80000000 (VA 80000000)
+1896364
+Loading ./armv7/sbin/boot_ve
+1896750
+Boot driver entry point: PA 8000ade0
+1896760
+Loading .//armv7/sbin/cpu_a15ve
+1896764
+CPU driver entry point: VA 80015000
+1896768
+Allocated 0xf3000B at PA 8004c000 for .//armv7/sbin/cpu_a15ve
+1896772
+Allocated 0x19a000B at PA 8013f000 for .//armv7/sbin/init
+1897073
+Allocated 0x18f000B at PA 802d9000 for .//armv7/sbin/mem_serv
+1897107
+ARM Static Bootloader
+1897142
+Reading boot configuration from platforms/arm/menu.lst.armv7_a15ve_fvp_4
+1897189
+Beginning allocation at PA 80000000 (VA 80000000)
+1897195
+Loading ./armv7/sbin/boot_ve
+1897212
+Allocated 0x19a000B at PA 8013f000 for .//armv7/sbin/init
+1897295
+Boot driver entry point: PA 8000ade0
+1897303
+Loading .//armv7/sbin/cpu_a15ve
+1897452
+CPU driver entry point: VA 80015000
+1897459
+Allocated 0xf3000B at PA 8004c000 for .//armv7/sbin/cpu_a15ve
+1897581
+Allocated 0x18f000B at PA 802d9000 for .//armv7/sbin/mem_serv
+1898004
+Allocated 0x217000B at PA 80468000 for .//armv7/sbin/monitor
+1898012
+Allocated 0x19a000B at PA 8013f000 for .//armv7/sbin/init
+1898116
+Allocated 0x18f000B at PA 802d9000 for .//armv7/sbin/mem_serv
+1898489
+Allocated 0x217000B at PA 80468000 for .//armv7/sbin/monitor
+1898944
+Allocated 0x18f000B at PA 802d9000 for .//armv7/sbin/mem_serv
+1899066
+Allocated 0x217000B at PA 80468000 for .//armv7/sbin/monitor
+1899289
+Allocated 0x1b5000B at PA 8067f000 for .//armv7/sbin/ramfsd
+1899769
+Allocated 0x1b5000B at PA 8067f000 for .//armv7/sbin/ramfsd
+1899902
+Allocated 0x217000B at PA 80468000 for .//armv7/sbin/monitor
+1900293
+Allocated 0x1b5000B at PA 8067f000 for .//armv7/sbin/ramfsd
+1900396
+Allocated 0x370000B at PA 80834000 for .//armv7/sbin/skb
+1900839
+Allocated 0x370000B at PA 80834000 for .//armv7/sbin/skb
+1901132
+Allocated 0x1b5000B at PA 8067f000 for .//armv7/sbin/ramfsd
+1901358
+Allocated 0x370000B at PA 80834000 for .//armv7/sbin/skb
+1902253
+Allocated 0x370000B at PA 80834000 for .//armv7/sbin/skb
+1902559
+Allocated 0x114000B at PA 80ba4000 for .//eclipseclp_ramfs.cpio.gz
+1902959
+Allocated 0x114000B at PA 80ba4000 for .//eclipseclp_ramfs.cpio.gz
+1903250
+Allocated 0x10000B at PA 80cb8000 for .//skb_ramfs.cpio.gz
+1903285
+Allocated 0x232000B at PA 80cc8000 for .//armv7/sbin/kaluga
+1903422
+Allocated 0x114000B at PA 80ba4000 for .//eclipseclp_ramfs.cpio.gz
+1903620
+Allocated 0x10000B at PA 80cb8000 for .//skb_ramfs.cpio.gz
+1903653
+Allocated 0x232000B at PA 80cc8000 for .//armv7/sbin/kaluga
+1904094
+Allocated 0x10000B at PA 80cb8000 for .//skb_ramfs.cpio.gz
+1904123
+Allocated 0x232000B at PA 80cc8000 for .//armv7/sbin/kaluga
+1904301
+Allocated 0x114000B at PA 80ba4000 for .//eclipseclp_ramfs.cpio.gz
+1904620
+Allocated 0x1e6000B at PA 80efa000 for .//armv7/sbin/spawnd
+1904913
+Allocated 0x1e6000B at PA 80efa000 for .//armv7/sbin/spawnd
+1904964
+Allocated 0x10000B at PA 80cb8000 for .//skb_ramfs.cpio.gz
+1905008
+Allocated 0x232000B at PA 80cc8000 for .//armv7/sbin/kaluga
+1905399
+Allocated 0x1e6000B at PA 80efa000 for .//armv7/sbin/spawnd
+1905879
+Allocated 0x18e000B at PA 810e0000 for .//armv7/sbin/proc_mgmt
+1906102
+Allocated 0x18e000B at PA 810e0000 for .//armv7/sbin/proc_mgmt
+1906294
+Allocated 0x1e6000B at PA 80efa000 for .//armv7/sbin/spawnd
+1906563
+Allocated 0x18e000B at PA 810e0000 for .//armv7/sbin/proc_mgmt
+1906818
+Allocated 0x1e3000B at PA 8126e000 for .//armv7/sbin/startd
+1906958
+Allocated 0x1e3000B at PA 8126e000 for .//armv7/sbin/startd
+1907424
+Allocated 0x1e3000B at PA 8126e000 for .//armv7/sbin/startd
+1907462
+Allocated 0x18e000B at PA 810e0000 for .//armv7/sbin/proc_mgmt
+1907919
+Allocated 0x19b000B at PA 81451000 for .//armv7/sbin/serial_kernel
+1907926
+Allocated 0x19b000B at PA 81451000 for .//armv7/sbin/serial_kernel
+1908327
+Allocated 0x1e3000B at PA 8126e000 for .//armv7/sbin/startd
+1908382
+Allocated 0x19b000B at PA 81451000 for .//armv7/sbin/serial_kernel
+1908787
+Allocated 0x26b000B at PA 815ec000 for .//armv7/sbin/corectrl
+1908795
+Allocated 0x26b000B at PA 815ec000 for .//armv7/sbin/corectrl
+1909165
+Allocated 0x26b000B at PA 815ec000 for .//armv7/sbin/corectrl
+1909371
+Allocated 0x19b000B at PA 81451000 for .//armv7/sbin/serial_kernel
+1910136
+Allocated 0x190000B at PA 81857000 for .//armv7/sbin/angler
+1910148
+Allocated 0x190000B at PA 81857000 for .//armv7/sbin/angler
+1910212
+Allocated 0x190000B at PA 81857000 for .//armv7/sbin/angler
+1910219
+Allocated 0x26b000B at PA 815ec000 for .//armv7/sbin/corectrl
+1910968
+Allocated 0x282000B at PA 819e7000 for .//armv7/sbin/fish
+1910979
+Allocated 0x282000B at PA 819e7000 for .//armv7/sbin/fish
+1910984
+Allocated 0x282000B at PA 819e7000 for .//armv7/sbin/fish
+1911464
+Allocated 0x190000B at PA 81857000 for .//armv7/sbin/angler
+1912288
+Allocated 0x190000B at PA 81c69000 for .//armv7/sbin/examples/xmpl-call-response
+1912311
+Allocated 0x18a000B at PA 81c69000 for .//armv7/sbin/memtest
+1912316
+Allocated 0x18a000B at PA 81c69000 for .//armv7/sbin/memtest
+1912320
+Allocated 0x282000B at PA 819e7000 for .//armv7/sbin/fish
+1913157
+Allocated 973B at PA 81df3000 for multiboot
+1913168
+Allocated 944B at PA 81df3000 for multiboot
+1913175
+Writing to armv7_a15ve_1_image
+1913179
+Writing to armv7_a15ve_fvp_1_image
+1913183
+Allocated 0x190000B at PA 81df9000 for .//armv7/sbin/examples/xmpl-call-response
+1913501
+Allocated 0x18a000B at PA 81c69000 for .//armv7/sbin/memtest
+1913797
+Allocated 0x18a000B at PA 81f89000 for .//armv7/sbin/memtest
+1914101
+Allocated 973B at PA 81df3000 for multiboot
+1914109
+Writing to armv7_a15ve_fvp_4_image
+1914364
+Allocated 1084B at PA 82113000 for multiboot
+1914369
+Writing to armv7_a15ve_4_image
+2272697
+./tools/bin/arm_bootimage platforms/arm/menu.lst.armv7_a15ve_gem5 ./armv7/sbin/boot_ve armv7_a15ve_gem5_image . 0x80000000 
+2274842
+..//tools/arm_boot/gdb_script.sh arm-linux-gnueabi-objdump armv7_a15ve_fvp_1_image ./armv7/sbin/boot_ve ./armv7/sbin/cpu_a15ve armv7_a15ve_fvp_1_image-gdb.gdb 
+2277712
+ARM Static Bootloader
+2277767
+Reading boot configuration from platforms/arm/menu.lst.armv7_a15ve_gem5
+2277779
+Beginning allocation at PA 80000000 (VA 80000000)
+2277790
+Loading ./armv7/sbin/boot_ve
+2278240
+Boot driver entry point: PA 8000ade0
+2278271
+Loading .//armv7/sbin/cpu_a15ve
+2278767
+CPU driver entry point: VA 80015000
+2278799
+Allocated 0xf3000B at PA 8004c000 for .//armv7/sbin/cpu_a15ve
+2280969
+Allocated 0x19a000B at PA 8013f000 for .//armv7/sbin/init
+2282889
+Allocated 0x18f000B at PA 802d9000 for .//armv7/sbin/mem_serv
+2285211
+..//tools/arm_boot/gdb_script.sh arm-linux-gnueabi-objdump armv7_a15ve_fvp_4_image ./armv7/sbin/boot_ve ./armv7/sbin/cpu_a15ve armv7_a15ve_fvp_4_image-gdb.gdb 
+2285533
+Allocated 0x217000B at PA 80468000 for .//armv7/sbin/monitor
+2288325
+..//tools/arm_boot/gdb_script.sh arm-linux-gnueabi-objdump armv7_a15ve_1_image ./armv7/sbin/boot_ve ./armv7/sbin/cpu_a15ve armv7_a15ve_1_image-gdb.gdb 
+2291043
+Allocated 0x1b5000B at PA 8067f000 for .//armv7/sbin/ramfsd
+2292150
+Allocated 0x370000B at PA 80834000 for .//armv7/sbin/skb
+2296033
+..//tools/arm_boot/gdb_script.sh arm-linux-gnueabi-objdump armv7_a15ve_4_image ./armv7/sbin/boot_ve ./armv7/sbin/cpu_a15ve armv7_a15ve_4_image-gdb.gdb 
+2298288
+Allocated 0x114000B at PA 80ba4000 for .//eclipseclp_ramfs.cpio.gz
+2299946
+Allocated 0x10000B at PA 80cb8000 for .//skb_ramfs.cpio.gz
+2300048
+Allocated 0x232000B at PA 80cc8000 for .//armv7/sbin/kaluga
+2302624
+Allocated 0x1e6000B at PA 80efa000 for .//armv7/sbin/spawnd
+2304727
+Allocated 0x18e000B at PA 810e0000 for .//armv7/sbin/proc_mgmt
+2306086
+Allocated 0x1e3000B at PA 8126e000 for .//armv7/sbin/startd
+2307683
+Allocated 0x19b000B at PA 81451000 for .//armv7/sbin/serial_kernel
+2308951
+Allocated 0x26b000B at PA 815ec000 for .//armv7/sbin/corectrl
+2310594
+Allocated 0x190000B at PA 81857000 for .//armv7/sbin/angler
+2311479
+Allocated 0x282000B at PA 819e7000 for .//armv7/sbin/fish
+2313037
+Allocated 0x18a000B at PA 81c69000 for .//armv7/sbin/memtest
+2313973
+Allocated 959B at PA 81df3000 for multiboot
+2313987
+Writing to armv7_a15ve_gem5_image
+2414985
+..//tools/arm_boot/gdb_script.sh arm-linux-gnueabi-objdump armv7_a15ve_gem5_image ./armv7/sbin/boot_ve ./armv7/sbin/cpu_a15ve armv7_a15ve_gem5_image-gdb.gdb 
+2423123
+Built platform <VExpressEMM-A15>
+2973734
+ac3a667896f7
+2979439
+Rm container successfully
